@@ -17,7 +17,7 @@ mvn archetype:generate -U \
        -DarchetypeVersion=2.5 \
        -DarchetypeRepository=https://oss.sonatype.org/content/repositories/releases \
        -DgroupId=demo.helloworld \
-       -DartifactId=helloworld-git2 \
+       -DartifactId=helloworld \
        -Dversion=1.0-SNAPSHOT
        
 The resulting pom file is broken and the application does not build.  I've committed the generated pom file in this repo as the first version and subsequently committed the versions required to get it working.
