@@ -1,0 +1,30 @@
+target
+lift_proto*
+*~
+*.iml
+*.tmproj
+*.swp
+.DS_Store
+.idea
+
+
+.classpath
+.orig
+.project
+.settings
+.sublime-project
+
+# IDE specific
+.scala_dependencies
+.project
+.settings
+.cache
+.cache-main
+.cache-tests
+/target
+
+# SASS Stuff
+.sass-cache
+*.scssc
+./src/main/resources/props/pilot.default.props
+./src/main/resources/props/production.default.props
