@@ -159,7 +159,7 @@ object RestHelperAPI extends RestHelper {
     case (JsonSelect, e, _) => toJSON(e)
     case (XmlSelect, e, _) => toXML(e)
   }
-  
+/*
   serveJx {
     case Get(List("api", "expense", Expense(expense,_)), _) => Full(expense)
   }
@@ -171,7 +171,7 @@ object RestHelperAPI extends RestHelper {
                Map("who" -> name,
                    "what" -> ("Hello at " + new java.util.Date))))
   }
-    
+  */
 }
 
 // Close package statements
