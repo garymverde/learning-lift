@@ -29,7 +29,7 @@ object DependencyFactory extends Factory {
   init()
 }
 
-/*
+
 /**
  * Examples of changing the implementation
  */
@@ -52,4 +52,4 @@ sealed abstract class Changer {
     }
   }
 }
-*/
+
