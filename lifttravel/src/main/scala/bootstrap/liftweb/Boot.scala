@@ -22,13 +22,8 @@ class Boot {
 
     // Build SiteMap
     val entries = List(
-      Menu.i("Home") / "index", // the simple way to declare a menu
-
-      // more complex because this menu allows anything in the
-      // /static path to be visible
-//      Menu(Loc("Static", Link(List("static"), true, "/static/index"), "Static Content")))
-      Menu.i("Dummy") / "static/dummy",       //This didn't work as expected.  A sub-menu here would be a good idea
-      Menu.i("Static") / "static" / **
+      Menu.i("Home") / "index",
+      Menu.i("Auctions") / "auctions/index"
     )
     // set the sitemap.  Note if you don't want access control for
     // each page, just comment this line out.
