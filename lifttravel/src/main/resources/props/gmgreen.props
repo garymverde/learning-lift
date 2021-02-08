@@ -1,1 +1,4 @@
 foo.name=gmgreen
+
+db.class=org.h2.Driver
+db.url=jdbc:h2:./database/chapter_3;MVCC=TRUE

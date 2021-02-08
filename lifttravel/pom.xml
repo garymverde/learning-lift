@@ -94,6 +94,11 @@
       <version>8.1.16.v20140903</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.197</version>
+    </dependency>
     <!-- for LiftConsole -->
     <dependency>
       <groupId>org.scala-lang</groupId>
