@@ -33,9 +33,14 @@ class Boot {
 
     // Build SiteMap
     val entries = List(
-      Menu.i("Home") / "index",
-      Menu.i("Auctions") / "auctions/index"
-    )
+      Menu("Home") / "index" >> LocGroup("public"),
+      Menu("Admin") / "admin" / "index" >> LocGroup("admin"),
+      Menu("Suppliers") / "admin" / "suppliers" >> LocGroup("admin")
+        submenus(Supplier.menus : _*),
+      Menu("Search") / "search",
+      Menu("History") / "history"
+    ) ::: Customer.menus
+
     // set the sitemap.  Note if you don't want access control for
     // each page, just comment this line out.
     LiftRules.setSiteMap(SiteMap(entries:_*))
