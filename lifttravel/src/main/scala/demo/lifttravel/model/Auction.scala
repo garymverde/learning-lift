@@ -36,8 +36,7 @@ class Auction extends LongKeyedMapper[Auction] with IdPK with CreatedUpdated {
   // relationships
   object supplier extends LongMappedMapper(this, Supplier){
     override def dbColumnName = "supplier_id"
-    override def validSelectValues =
-      Full(Supplier.findMap(OrderBy(Supplier.name, Ascending)){
+    override def validSelectValues = Full(Supplier.findMap(OrderBy(Supplier.name, Ascending)){
         case s: Supplier => Full(s.id.is -> s.name.is)
       })
   }

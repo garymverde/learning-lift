@@ -20,6 +20,9 @@ import net.liftweb.http.{LiftRules, S}
 class Boot {
   def boot {
 
+    // where to search snippet
+    LiftRules.addToPackages("demo.lifttravel")
+
     DB.defineConnectionManager(DefaultConnectionIdentifier, DBVendor)
     LiftRules.unloadHooks.append(
       () => DBVendor.closeAllConnections_!())
@@ -28,17 +31,14 @@ class Boot {
     Schemifier.schemify(true, Schemifier.infoF _, Auction, Bid, Customer,
       Order, OrderAuction, Supplier)
 
-    // where to search snippet
-    LiftRules.addToPackages("demo.lifttravel")
-
     // Build SiteMap
     val entries = List(
       Menu("Home") / "index" >> LocGroup("public"),
       Menu("Admin") / "admin" / "index" >> LocGroup("admin"),
       Menu("Suppliers") / "admin" / "suppliers" >> LocGroup("admin")
         submenus(Supplier.menus : _*),
-      Menu("Search") / "search",
-      Menu("History") / "history"
+      Menu("Search") / "search" >> LocGroup("public"),
+      Menu("History") / "history" >> LocGroup("public")
     ) ::: Customer.menus
 
     // set the sitemap.  Note if you don't want access control for

@@ -16,6 +16,7 @@ class HelloWorld {
   def howdy = <span>Welcome to lift-travel at {new _root_.java.util.Date}. Mode is {Props.mode}</span>
   def oldHowdy = "#time *" #> date.map(_.toString)
   def neighbor = "#neighbor *" #>  who
+  def render = "*" #> <strong>hello world!</strong>
   /*
    lazy val date: Date = DependencyFactory.time.vend // create the date via factory
 

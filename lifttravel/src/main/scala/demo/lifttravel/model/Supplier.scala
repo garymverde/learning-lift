@@ -6,15 +6,11 @@ import net.liftweb.sitemap.Loc._
 
 object Supplier extends Supplier with LongKeyedMetaMapper[Supplier] with CRUDify[Long,Supplier]{
   override def dbTableName = "suppliers"
-  override def pageWrapper(body: NodeSeq) =
-    <lift:surround with="admin" at="content">{body}</lift:surround>
-  override def calcPrefix =
-    List("admin",_dbTableNameLC)
+  override def pageWrapper(body: NodeSeq) = <lift:surround with="admin" at="content">{body}</lift:surround>
+  override def calcPrefix = List("admin",_dbTableNameLC)
   override def displayName = "Supplier"
-  override def showAllMenuLocParams =
-    LocGroup("admin") :: Nil
-  override def createMenuLocParams =
-    LocGroup("admin") :: Nil
+  override def showAllMenuLocParams = LocGroup("admin") :: Nil
+  override def createMenuLocParams = LocGroup("admin") :: Nil
 }
 class Supplier extends LongKeyedMapper[Supplier]
     with IdPK
