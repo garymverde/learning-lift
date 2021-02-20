@@ -1,4 +1,4 @@
-package demo.helloworld
+package demo.lifttravel
 package lib
 
 import net.liftweb._
